@@ -9,6 +9,7 @@ function CountryNews() {
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
   function handlePrev() {
     setPage(page - 1);
@@ -22,7 +23,7 @@ function CountryNews() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:3000/country/${params.iso}?page=${page}&pageSize=${pageSize}`)
+    fetch(`${backendUrl}/country/${params.iso}?page=${page}&pageSize=${pageSize}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
