@@ -8,6 +8,7 @@ function AllNews() {
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
   function handlePrev() {
     setPage(page - 1)
@@ -17,7 +18,7 @@ function AllNews() {
   }
   let pageSize = 12;
   useEffect(() => {
-    fetch(`http://localhost:3000/all-news?page=${page}&pageSize=${pageSize}`)
+    fetch(`${backendUrl}/all-news?page=${page}&pageSize=${pageSize}`)
       .then(response => {
         // console.log(response) 
         if (response.ok) {
