@@ -4,7 +4,6 @@
 
 
 .light-theme {
-    --background: url("https://tailwindcss.com/_next/static/media/hero@75.b2469a49.jpg");
     --primary: #F8FAFC;
     --secondary: #0F172A;
     --txt: #000;
@@ -17,7 +16,6 @@
 }
 
 .dark-theme {
-    --background: url("https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg");
     --primary: rgb(30,41,59);
     --secondary: #D5DDF0;
     --txt: #fff;
